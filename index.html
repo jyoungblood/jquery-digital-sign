@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="h-100 bg-black" style="overflow: hidden;">
+<head>
+
+  <title>Digital Sign</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./css/tachyons.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/sign-utils.js"></script>
+
+  <!-- refresh every 30 minutes -->
+  <meta http-equiv="refresh" content="1800" />
+
+  <script>
+    sign.init();
+  </script>
+
+</head>
+
+<body class="h-100 sans-serif relative bg-white-90 fade-in">
+
+  <div id="saver-white" class="fixed w-100 h-100 top-0 left-0 bg-black" style="z-index:4000; display:none;"></div>
+  <div id="saver-black" class="fixed w-100 h-100 top-0 left-0 bg-white" style="z-index:5000; display:none;"></div>
+
+  <header class="w-100 fixed top-0 bg-black white flex items-center justify-between pa3" style="z-index: 1000;">
+    <div>
+      <span id="clock-date"></span>
+    </div>
+    <div>
+      <span id="clock-time"></span>
+    </div>
+  </header>
+
+  <main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="slide bg-light-green dark-gray" data-order="0" data-duration="5000">
+      <div class="dtc v-mid tc">
+        <div class="flex justify-center items-center">
+          <div class="f-headline fw7 mr3">01</div>
+          <div class="f4 tl lh-title">Do what you love, <br />and the necessary<br /> resources will follow</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="slide bg-yellow near-black" data-order="1" data-duration="4000">
+      <div class="dtc v-mid tc">
+        <div class="flex justify-center items-center">
+          <div class="f-headline fw7 mr3">02</div>
+          <div class="f4 tl lh-title">Anyone can<br /> have a good time</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="slide bg-orange near-black" data-order="2" data-duration="6000">
+      <div class="dtc v-mid tc">
+        <div class="flex justify-center items-center">
+          <div class="f-headline fw7 mr3">03</div>
+          <div class="f4 tl lh-title">Live your dreams,<br /> don't chase 'em</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="slide bg-blue near-white" data-order="3" data-duration="3000">
+      <div class="dtc v-mid tc">
+        <div class="flex justify-center items-center">
+          <div class="f-headline fw7 mr3">04</div>
+          <div class="f4 tl lh-title">Any gyroscope<br /> can spin forever</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="slide bg-washed-red dark-red" data-order="4" data-duration="5000">
+      <div class="dtc v-mid tc">
+        <div class="flex justify-center items-center">
+          <div class="f-headline fw7 mr3">05</div>
+          <div class="f4 tl lh-title">Given enough time,<br /> all your code will get deleted</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="slide bg-washed-yellow dark-pink" data-order="5" data-duration="10000">
+      <div class="dtc v-mid tc">
+        <div class="flex justify-center items-center">
+          <div class="f-headline fw7 mr3">06</div>
+          <div id="pokemon-list" class="f5 tl lh-title mw6"><b>POKEMON FROM API:</b> </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      async function fetchPokemon() {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=15');
+        const data = await response.json();
+        return data;
+      }
+      fetchPokemon().then((data) => {
+        data.results.map(function (pokemon) {
+          $("#pokemon-list").append(`${pokemon.name} `);
+        });
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+  </main>
+</body>
+</html>
