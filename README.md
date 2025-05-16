@@ -1,6 +1,6 @@
 # jQuery Digital Sign
 
-This is a simple pragmatic solution for "quick and easy" digital signage that can be built with common web technology. Throw these files on any web server, point your sign's browser at it and you're good to go.
+This is a straightfoward solution for "quick and easy" digital signage that can be built with common web technology. Throw these files on any web server, point your sign's browser at it and you're good to go.
 
 Demo: https://jyoungblood.github.io/jquery-digital-sign/
 
